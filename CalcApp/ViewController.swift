@@ -9,12 +9,26 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    //carModel(変数)でCar(class,設計図)が使えるようになった
+    var carModel = Car()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        carModel.frontWheel = 10
+        carModel.rearWheel = 10
+        
     }
 
-
+    @IBAction func doAction(_ sender: Any) {
+        
+        //Car.swiftのcarModelクラスのdriveメソッドを呼ぶ
+        carModel.drive()
+        
+        carModel.move(toBack: "後ろに行くよ！！")
+        
+    }
+    
 }
 
